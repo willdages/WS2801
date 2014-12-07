@@ -1,7 +1,7 @@
 /* ========================== Application.cpp =========================== */
 
 #include "application.h"
-#include "Adafruit_WS2801/Adafruit_WS2801.h"
+#include "WS2801/WS2801.h"
 
 /*****************************************************************************
 Example sketch for driving Adafruit WS2801 pixels on the Spark Core!

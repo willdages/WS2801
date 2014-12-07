@@ -1,7 +1,7 @@
-Adafruit_WS2801
+WS2801
 ======
 
-A WS2801 Library for the Spark Core (Originally written by Adafruit)
+A WS2801 Library for the Spark Core (Originally written by Adafruit). The name is 'WS2801' instead of 'Adafruit_WS2801' because 'Adafruit_WS2801' is already taken by another user who has not published the library.
 
 ## History
 
