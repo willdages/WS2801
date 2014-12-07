@@ -1,0 +1,7 @@
+{
+  "name": "WS2801",
+  "author": "Will Dages",
+  "license": "MIT",
+  "version": "0.0.1",
+  "description": "Spark Library for WS2801 LEDs (Ported from Adafruit's WS2801 Arduino Library by Technobly / BDub - Jan 9th, 2014"
+}
