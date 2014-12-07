@@ -38,9 +38,6 @@ Adafruit_WS2801::Adafruit_WS2801(uint16_t n, uint8_t dpin, uint8_t cpin, uint8_t
 // other function calls with provide access to pixels via an x,y coordinate system
 Adafruit_WS2801::Adafruit_WS2801(uint16_t w, uint16_t h, uint8_t dpin, uint8_t cpin, uint8_t order) {
   rgb_order = order;
-  alloc(w * h);
-  width = w;
-  height = h;
   updatePins(dpin, cpin);
 }
 
@@ -146,25 +143,10 @@ void Adafruit_WS2801::updateOrder(uint8_t order) {
 
 void Adafruit_WS2801::show(void) {
   uint16_t i, nl3 = numLEDs * 3; // 3 bytes per LED
-  ////uint8_t  bit;
 
-  // Write 24 bits per pixel:
-  ////if(hardwareSPI) {
-    for(i=0; i<nl3; i++) {
-      SPI.transfer(pixels[i]);
-      ////while(!(SPSR & (1<<SPIF)));
-    }
-    ////
-    /*} else {
-    for(i=0; i<nl3; i++ ) {
-      for(bit=0x80; bit; bit >>= 1) {
-        if(pixels[i] & bit) *dataport |=  datapinmask;
-        else                *dataport &= ~datapinmask;
-        *clkport |=  clkpinmask;
-        *clkport &= ~clkpinmask;
-      }
-    }
-  }*/
+  for(i=0; i<nl3; i++) {
+    SPI.transfer(pixels[i]);
+  }
 
   delay(1); // Data is latched by holding clock pin low for 1 millisecond
 }
@@ -185,19 +167,6 @@ void Adafruit_WS2801::setPixelColor(uint16_t n, uint8_t r, uint8_t g, uint8_t b)
   }
 }
 
-// Set pixel color from separate 8-bit R, G, B components using x,y coordinate system:
-void Adafruit_WS2801::setPixelColor(uint16_t x, uint16_t y, uint8_t r, uint8_t g, uint8_t b) {
-  boolean evenRow = ((y % 2) == 0);
-  // calculate x offset first
-  uint16_t offset = x % width;
-  if (!evenRow) {
-    offset = (width-1) - offset;
-  }
-  // add y offset
-  offset += y * width;
-  setPixelColor(offset, r, g, b);
-}
-
 // Set pixel color from 'packed' 32-bit RGB value:
 void Adafruit_WS2801::setPixelColor(uint16_t n, uint32_t c) {
   if(n < numLEDs) { // Arrays are 0-indexed, thus NOT '<='
@@ -215,19 +184,6 @@ void Adafruit_WS2801::setPixelColor(uint16_t n, uint32_t c) {
     }
     *p++ = c;         // Blue
   }
-}
-
-// Set pixel color from 'packed' 32-bit RGB value using x,y coordinate system:
-void Adafruit_WS2801::setPixelColor(uint16_t x, uint16_t y, uint32_t c) {
-  boolean evenRow = ((y % 2) == 0);
-  // calculate x offset first
-  uint16_t offset = x % width;
-  if (!evenRow) {
-    offset = (width-1) - offset;
-  }
-  // add y offset
-  offset += y * width;
-  setPixelColor(offset, c);
 }
 
 // Query color from previously-set pixel (returns packed 32-bit RGB value)

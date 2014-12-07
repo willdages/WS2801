@@ -58,7 +58,7 @@ class Adafruit_WS2801 {
  private:
 
   uint16_t
-    numLEDs
+    numLEDs;
   uint8_t
     *pixels,   // Holds color values for each LED (3 bytes each)
     rgb_order, // Color order; RGB vs GRB (or others, if needed in future)
