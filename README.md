@@ -1,4 +1,4 @@
-WS2801
+Adafruit_WS2801
 ======
 
 A WS2801 Library for the Spark Core (Originally written by Adafruit)

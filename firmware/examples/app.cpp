@@ -1,7 +1,7 @@
 /* ========================== Application.cpp =========================== */
 
 #include "application.h"
-#include "WS2801/WS2801.h"
+#include "Adafruit_WS2801/Adafruit_WS2801.h"
 
 /*****************************************************************************
 Example sketch for driving Adafruit WS2801 pixels on the Spark Core!
@@ -25,9 +25,7 @@ Example sketch for driving Adafruit WS2801 pixels on the Spark Core!
 // SPARK CORE SPI PINOUTS
 // http://docs.spark.io/#/firmware/communication-spi
 // A5 (MOSI) Yellow wire on Adafruit Pixels
-// A4 (MISO) NOT USED!!
 // A3 (SCK) Green wire on Adafruit Pixels
-// A2 (SS) NOT USED!!
 
 // Don't forget to connect the ground wire to Arduino ground,
 // and the +5V wire to a +5V supply$

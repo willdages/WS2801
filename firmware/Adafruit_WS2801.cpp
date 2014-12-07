@@ -27,7 +27,7 @@ Example sketch for driving Adafruit WS2801 pixels on the Spark Core!
 
 /* ========================== Adafruit_WS2801.cpp =========================== */
 
-#include "WS2801.h"
+#include "Adafruit_WS2801.h"
 
 // Example to control WS2801-based RGB LED Modules in a strand or strip
 // Written by Adafruit - MIT license
