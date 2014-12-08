@@ -5,11 +5,9 @@ A WS2801 Library for the Spark Core (Originally written by Adafruit). The name i
 
 ## History
 
-This library originated from Adafruit as a [WS2801 Arduino Library](https://github.com/adafruit/Adafruit-WS2801-Library) with a BSD license. It was then ported over to the Spark Core by "Technobly / Bdub" according to the note at the top of the library. It exists in a few forms and I wasn't able to track down the original source of the port. The original version may be here [in this gist](https://gist.github.com/technobly/8339548) but it wasn't the version I started with.
+This library originated from Adafruit as a [WS2801 Arduino Library](https://github.com/adafruit/Adafruit-WS2801-Library) with a BSD license. It was then ported over to the Spark Core by "Technobly / Bdub" according to the note at the top of the library. The original version may be here [in this gist](https://gist.github.com/technobly/8339548) but it wasn't the version I started with. I took [this version](https://github.com/kwyjibo089/SparkWeatherMoodlight/blob/master/Arduino/moodlight.ino) from Roman Mueller's [Weather Moodlight tutorial](http://blog.roman-mueller.ch/index.php/2014/03/13/a-weather-moodlight/) and split it out into this file structure so it could be included as a library in the Spark IDE.
 
-I took [this version](https://github.com/kwyjibo089/SparkWeatherMoodlight/blob/master/Arduino/moodlight.ino) from Roman Mueller's [Weather Moodlight tutorial](http://blog.roman-mueller.ch/index.php/2014/03/13/a-weather-moodlight/) and split it out into this file structure so it could be included as a library in the Spark IDE.
-
-I wrote very little of this code (barely touched the WS2801.h and WS2801.cpp files), and modified Roman's application to work for my application (mainly this means stripping out a bunch of functions I didn't have any use for).
+I wrote very little of this code (barely touched the WS2801.h and WS2801.cpp files), and modified Roman's application to work as a better generic example for the library (mainly this means stripping out a bunch of functions that were too specific).
 
 ## License
 
